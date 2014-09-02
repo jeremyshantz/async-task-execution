@@ -1,0 +1,43 @@
+﻿@model tasksync.Models.SubmitViewModel 
+
+@{
+    ViewBag.Title = "Submit";
+}
+
+<div class="container">
+
+    <h2>Thank you for your submission</h2>
+
+    <div id="results" class="well well-sm" data-url="@Url.Action("Results", "Form", new { id = Model.ID})">
+        Working......
+    </div>
+</div>
+
+@section scripts 
+{
+    <script type="text/javascript">
+
+        $(function () {
+            var pollcount = 0;
+            var pollmax = 80;
+            var pollinterval = 500;
+
+            var GetResults = function () {
+
+                var results = $("#results");
+                results.load(results.data("url"), function () {
+                    // alert("ok");
+                });
+
+                pollcount++;
+
+                if (pollcount < pollmax) {
+                    setTimeout(GetResults, pollinterval);
+                }
+            }
+
+            GetResults();
+        });
+
+    </script>
+}

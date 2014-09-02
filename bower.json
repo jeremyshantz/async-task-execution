@@ -1,0 +1,22 @@
+{
+  "name": "tasksync",
+  "version": "1.0.0",
+  "authors": [
+    "Jeremy Shantz <jeremy@shantz.io>"
+  ],
+  "description": "A demo of async feedback",
+  "main": "/form/submit",
+  "license": "MIT",
+  "homepage": "https://github.com/jeremyshantz",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "bootstrap": "~3.2.0"
+  }
+}

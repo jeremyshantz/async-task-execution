@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C71C8AE3-4470-476C-9C2F-32CE8E9F5F42}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>tasksync</RootNamespace>
+    <AssemblyName>tasksync</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.1\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\FormController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ActionResult.cs" />
+    <Compile Include="Models\WorkflowAction.cs" />
+    <Compile Include="Models\Workflow.cs" />
+    <Compile Include="Models\WorkflowService.cs" />
+    <Compile Include="Models\SubmitViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\images\tiny_spinner.gif" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\vendors\bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="Scripts\vendors\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="Scripts\vendors\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="Scripts\vendors\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Scripts\vendors\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\vendors\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="Scripts\vendors\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Scripts\vendors\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\vendors\bootstrap\Gruntfile.js" />
+    <Content Include="Scripts\vendors\bootstrap\grunt\bs-glyphicons-data-generator.js" />
+    <Content Include="Scripts\vendors\bootstrap\grunt\bs-lessdoc-parser.js" />
+    <Content Include="Scripts\vendors\bootstrap\grunt\bs-raw-files-generator.js" />
+    <Content Include="Scripts\vendors\bootstrap\js\affix.js" />
+    <Content Include="Scripts\vendors\bootstrap\js\alert.js" />
+    <Content Include="Scripts\vendors\bootstrap\js\button.js" />
+    <Content Include="Scripts\vendors\bootstrap\js\carousel.js" />
+    <Content Include="Scripts\vendors\bootstrap\js\collapse.js" />
+    <Content Include="Scripts\vendors\bootstrap\js\dropdown.js" />
+    <Content Include="Scripts\vendors\bootstrap\js\modal.js" />
+    <Content Include="Scripts\vendors\bootstrap\js\popover.js" />
+    <Content Include="Scripts\vendors\bootstrap\js\scrollspy.js" />
+    <Content Include="Scripts\vendors\bootstrap\js\tab.js" />
+    <Content Include="Scripts\vendors\bootstrap\js\tooltip.js" />
+    <Content Include="Scripts\vendors\bootstrap\js\transition.js" />
+    <Content Include="Scripts\vendors\jquery\dist\jquery.js" />
+    <Content Include="Scripts\vendors\jquery\dist\jquery.min.js" />
+    <Content Include="Scripts\vendors\jquery\MIT-LICENSE.txt" />
+    <Content Include="Scripts\vendors\jquery\src\ajax.js" />
+    <Content Include="Scripts\vendors\jquery\src\ajax\jsonp.js" />
+    <Content Include="Scripts\vendors\jquery\src\ajax\load.js" />
+    <Content Include="Scripts\vendors\jquery\src\ajax\parseJSON.js" />
+    <Content Include="Scripts\vendors\jquery\src\ajax\parseXML.js" />
+    <Content Include="Scripts\vendors\jquery\src\ajax\script.js" />
+    <Content Include="Scripts\vendors\jquery\src\ajax\var\nonce.js" />
+    <Content Include="Scripts\vendors\jquery\src\ajax\var\rquery.js" />
+    <Content Include="Scripts\vendors\jquery\src\ajax\xhr.js" />
+    <Content Include="Scripts\vendors\jquery\src\attributes.js" />
+    <Content Include="Scripts\vendors\jquery\src\attributes\attr.js" />
+    <Content Include="Scripts\vendors\jquery\src\attributes\classes.js" />
+    <Content Include="Scripts\vendors\jquery\src\attributes\prop.js" />
+    <Content Include="Scripts\vendors\jquery\src\attributes\support.js" />
+    <Content Include="Scripts\vendors\jquery\src\attributes\val.js" />
+    <Content Include="Scripts\vendors\jquery\src\callbacks.js" />
+    <Content Include="Scripts\vendors\jquery\src\core.js" />
+    <Content Include="Scripts\vendors\jquery\src\core\access.js" />
+    <Content Include="Scripts\vendors\jquery\src\core\init.js" />
+    <Content Include="Scripts\vendors\jquery\src\core\parseHTML.js" />
+    <Content Include="Scripts\vendors\jquery\src\core\ready.js" />
+    <Content Include="Scripts\vendors\jquery\src\core\var\rsingleTag.js" />
+    <Content Include="Scripts\vendors\jquery\src\css.js" />
+    <Content Include="Scripts\vendors\jquery\src\css\addGetHookIf.js" />
+    <Content Include="Scripts\vendors\jquery\src\css\curCSS.js" />
+    <Content Include="Scripts\vendors\jquery\src\css\defaultDisplay.js" />
+    <Content Include="Scripts\vendors\jquery\src\css\hiddenVisibleSelectors.js" />
+    <Content Include="Scripts\vendors\jquery\src\css\support.js" />
+    <Content Include="Scripts\vendors\jquery\src\css\swap.js" />
+    <Content Include="Scripts\vendors\jquery\src\css\var\cssExpand.js" />
+    <Content Include="Scripts\vendors\jquery\src\css\var\getStyles.js" />
+    <Content Include="Scripts\vendors\jquery\src\css\var\isHidden.js" />
+    <Content Include="Scripts\vendors\jquery\src\css\var\rmargin.js" />
+    <Content Include="Scripts\vendors\jquery\src\css\var\rnumnonpx.js" />
+    <Content Include="Scripts\vendors\jquery\src\data.js" />
+    <Content Include="Scripts\vendors\jquery\src\data\accepts.js" />
+    <Content Include="Scripts\vendors\jquery\src\data\Data.js" />
+    <Content Include="Scripts\vendors\jquery\src\data\var\data_priv.js" />
+    <Content Include="Scripts\vendors\jquery\src\data\var\data_user.js" />
+    <Content Include="Scripts\vendors\jquery\src\deferred.js" />
+    <Content Include="Scripts\vendors\jquery\src\deprecated.js" />
+    <Content Include="Scripts\vendors\jquery\src\dimensions.js" />
+    <Content Include="Scripts\vendors\jquery\src\effects.js" />
+    <Content Include="Scripts\vendors\jquery\src\effects\animatedSelector.js" />
+    <Content Include="Scripts\vendors\jquery\src\effects\Tween.js" />
+    <Content Include="Scripts\vendors\jquery\src\event.js" />
+    <Content Include="Scripts\vendors\jquery\src\event\alias.js" />
+    <Content Include="Scripts\vendors\jquery\src\event\support.js" />
+    <Content Include="Scripts\vendors\jquery\src\exports\amd.js" />
+    <Content Include="Scripts\vendors\jquery\src\exports\global.js" />
+    <Content Include="Scripts\vendors\jquery\src\intro.js" />
+    <Content Include="Scripts\vendors\jquery\src\jquery.js" />
+    <Content Include="Scripts\vendors\jquery\src\manipulation.js" />
+    <Content Include="Scripts\vendors\jquery\src\manipulation\support.js" />
+    <Content Include="Scripts\vendors\jquery\src\manipulation\var\rcheckableType.js" />
+    <Content Include="Scripts\vendors\jquery\src\manipulation\_evalUrl.js" />
+    <Content Include="Scripts\vendors\jquery\src\offset.js" />
+    <Content Include="Scripts\vendors\jquery\src\outro.js" />
+    <Content Include="Scripts\vendors\jquery\src\queue.js" />
+    <Content Include="Scripts\vendors\jquery\src\queue\delay.js" />
+    <Content Include="Scripts\vendors\jquery\src\selector-native.js" />
+    <Content Include="Scripts\vendors\jquery\src\selector-sizzle.js" />
+    <Content Include="Scripts\vendors\jquery\src\selector.js" />
+    <Content Include="Scripts\vendors\jquery\src\serialize.js" />
+    <Content Include="Scripts\vendors\jquery\src\sizzle\dist\sizzle.js" />
+    <Content Include="Scripts\vendors\jquery\src\sizzle\dist\sizzle.min.js" />
+    <Content Include="Scripts\vendors\jquery\src\traversing.js" />
+    <Content Include="Scripts\vendors\jquery\src\traversing\findFilter.js" />
+    <Content Include="Scripts\vendors\jquery\src\traversing\var\rneedsContext.js" />
+    <Content Include="Scripts\vendors\jquery\src\var\arr.js" />
+    <Content Include="Scripts\vendors\jquery\src\var\class2type.js" />
+    <Content Include="Scripts\vendors\jquery\src\var\concat.js" />
+    <Content Include="Scripts\vendors\jquery\src\var\hasOwn.js" />
+    <Content Include="Scripts\vendors\jquery\src\var\indexOf.js" />
+    <Content Include="Scripts\vendors\jquery\src\var\pnum.js" />
+    <Content Include="Scripts\vendors\jquery\src\var\push.js" />
+    <Content Include="Scripts\vendors\jquery\src\var\rnotwhite.js" />
+    <Content Include="Scripts\vendors\jquery\src\var\slice.js" />
+    <Content Include="Scripts\vendors\jquery\src\var\strundefined.js" />
+    <Content Include="Scripts\vendors\jquery\src\var\support.js" />
+    <Content Include="Scripts\vendors\jquery\src\var\toString.js" />
+    <Content Include="Scripts\vendors\jquery\src\wrap.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Form\Submit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Form\Results.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\vendors\bootstrap\.bower.json" />
+    <Content Include="Scripts\vendors\bootstrap\bower.json" />
+    <Content Include="Scripts\vendors\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <Content Include="Scripts\vendors\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="Scripts\vendors\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\vendors\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\vendors\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\vendors\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\vendors\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\vendors\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\vendors\bootstrap\grunt\sauce_browsers.yml" />
+    <Content Include="Scripts\vendors\bootstrap\less\alerts.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\badges.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\bootstrap.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\breadcrumbs.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\button-groups.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\buttons.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\carousel.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\close.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\code.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\component-animations.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\dropdowns.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\forms.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\glyphicons.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\grid.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\input-groups.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\jumbotron.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\labels.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\list-group.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\media.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\mixins.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\mixins\alerts.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\mixins\background-variant.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\mixins\border-radius.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\mixins\buttons.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\mixins\center-block.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\mixins\clearfix.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\mixins\forms.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\mixins\gradients.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\mixins\grid-framework.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\mixins\grid.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\mixins\hide-text.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\mixins\image.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\mixins\labels.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\mixins\list-group.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\mixins\nav-divider.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\mixins\nav-vertical-align.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\mixins\opacity.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\mixins\pagination.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\mixins\panels.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\mixins\progress-bar.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\mixins\reset-filter.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\mixins\resize.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\mixins\responsive-visibility.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\mixins\size.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\mixins\tab-focus.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\mixins\table-row.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\mixins\text-emphasis.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\mixins\text-overflow.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\mixins\vendor-prefixes.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\modals.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\navbar.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\navs.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\normalize.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\pager.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\pagination.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\panels.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\popovers.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\print.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\progress-bars.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\responsive-embed.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\responsive-utilities.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\scaffolding.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\tables.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\theme.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\thumbnails.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\tooltip.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\type.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\utilities.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\variables.less" />
+    <Content Include="Scripts\vendors\bootstrap\less\wells.less" />
+    <Content Include="Scripts\vendors\bootstrap\LICENSE" />
+    <Content Include="Scripts\vendors\bootstrap\package.json" />
+    <Content Include="Scripts\vendors\bootstrap\README.md" />
+    <Content Include="Scripts\vendors\jquery\.bower.json" />
+    <Content Include="Scripts\vendors\jquery\bower.json" />
+    <Content Include="Scripts\vendors\jquery\dist\jquery.min.map" />
+    <Content Include="Scripts\vendors\jquery\src\sizzle\dist\sizzle.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63073</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
