@@ -51,8 +51,6 @@ var Results = React.createClass({
             pollmax = 80,
             pollinterval = 500;
 
-        window.poop = this;
-
         var self = this;
 
         var GetResults;
